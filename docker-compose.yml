@@ -35,5 +35,5 @@ mongodb:
 mongodb-data:
   image: mongo:latest
   volumes:
-    - ./data/db:/data/db
+    - /var/lib/mongodb/data/db:/data/db
   command: "true"

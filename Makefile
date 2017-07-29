@@ -7,4 +7,5 @@ install:
 	chmod +x /usr/local/bin/docker-compose
 
 run:
+	mkdir -p /var/lib/mongodb/data
 	docker-compose -f /vagrant/docker-compose.yml up -d
