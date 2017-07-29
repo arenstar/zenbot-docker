@@ -29,6 +29,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      v.customize ["modifyvm", :id, "--name", "zenbot"]
     end
     zenbot.vm.provision :shell, :inline => "echo 'Defaults    env_keep+=SSH_AUTH_SOCK' >> /etc/sudoers.d/ssh_auth_sock"
+    zenbot.vm.provision :shell, :inline => "apt-get -y install make git"
     zenbot.vm.provision :shell, :inline => "cd /vagrant; make install run"
   end
 
