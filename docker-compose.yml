@@ -1,0 +1,39 @@
+server-btc:
+  image: arenstar/zenbot
+  links:
+    - mongodb
+  command: ./zenbot.sh trade --paper gdax.BTC-USD --debug
+  restart: always
+
+server-eth:
+  image: arenstar/zenbot
+  links:
+    - mongodb
+  command: ./zenbot.sh trade --paper gdax.ETH-USD --debug
+  restart: always
+
+server-ans:
+  image: arenstar/zenbot
+  links:
+    - mongodb
+  command: ./zenbot.sh trade --paper bittrex.BTC-ANS --debug
+  restart: always
+
+server-mona:
+  image: arenstar/zenbot
+  links:
+    - mongodb
+  command: ./zenbot.sh trade --paper bittrex.BTC-MONA --debug
+  restart: always
+
+mongodb:
+  image: mongo:latest
+  volumes_from:
+    - mongodb-data
+  command: mongod --smallfiles
+
+mongodb-data:
+  image: mongo:latest
+  volumes:
+    - ./data/db:/data/db
+  command: "true"
