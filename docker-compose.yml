@@ -21,12 +21,6 @@ server-ioc:
 
 mongodb:
   image: mongo:latest
-  volumes_from:
-    - mongodb-data
-  command: mongod --smallfiles
-
-mongodb-data:
-  image: mongo:latest
   volumes:
     - /var/lib/mongodb/data/db:/data/db
-  command: "true"
+  command: mongod --smallfiles
