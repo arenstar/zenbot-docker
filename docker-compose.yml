@@ -1,29 +1,22 @@
-server-btc:
+server-neo:
   image: arenstar/zenbot
   links:
     - mongodb
-  command: ./zenbot.sh trade --paper gdax.BTC-USD --debug
+  command: ./zenbot.sh trade --paper bittrex.BTC-NEO --debug
   restart: always
 
-server-eth:
+server-mtl:
   image: arenstar/zenbot
   links:
     - mongodb
-  command: ./zenbot.sh trade --paper gdax.ETH-USD --debug
+  command: ./zenbot.sh trade --paper bittrex.BTC-MTL --debug
   restart: always
 
-server-ans:
+server-ioc:
   image: arenstar/zenbot
   links:
     - mongodb
-  command: ./zenbot.sh trade --paper bittrex.BTC-ANS --debug
-  restart: always
-
-server-mona:
-  image: arenstar/zenbot
-  links:
-    - mongodb
-  command: ./zenbot.sh trade --paper bittrex.BTC-MONA --debug
+  command: ./zenbot.sh trade --paper bittrex.BTC-IOC --debug
   restart: always
 
 mongodb:

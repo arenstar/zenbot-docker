@@ -8,4 +8,4 @@ install:
 
 run:
 	mkdir -p /var/lib/mongodb/data
-	docker-compose -f /vagrant/docker-compose.yml up -d
+	docker-compose -f docker-compose.yml up -d
