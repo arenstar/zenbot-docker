@@ -9,3 +9,10 @@ install:
 run:
 	mkdir -p /var/lib/mongodb/data
 	docker-compose -f docker-compose.yml up -d
+
+down:
+	docker-compose -f docker-compose.yml down
+
+clean:
+	docker-compose -f docker-compose.yml kill
+	rm -rf /var/lib/mongodb/data
